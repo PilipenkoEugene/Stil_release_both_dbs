@@ -1,0 +1,64 @@
+Здесь представлены исходные коды обеих версий проекта под разные версии БД.
+
+Структуры баз данных для проектов:
+
+Mine BD                                         Not mine BD
+
+loginData                                       loginData
+id   |login   |password|is_enable|is_adm|       id   |login   |password|is_enable|is_adm|
+-----+--------+--------+---------+------+       -----+--------+--------+---------+------+ 
+    1|test    |test    |        1|     0|           2|test2   |test2   |        1|     0|
+32593|dfdf    |dfdf    |        1|     1|       32593|dfdf    |dfdf    |        1|     1|
+_________________________________________       _________________________________________
+
+actionPath                                      actionPath
+action|path          |                          id|prev|type  |name|            
+------+--------------+                          --+----+------+----+
+sqrt  |Func|Math|sqrt|                          1|main|menu  |Func|
+sqr   |Func|Math|sqr |                          2|1   |menu  |Math|
+impl  |Func|Math|impl|                          3|main|menu  |ADM |
+adm   |ADM|adm       |                          4|3   |action|adm |
+______________________                          5|2   |action|sqrt|
+                                                6|2   |action|sqr | 
+                                                7|2   |action|impl|
+                                                ___________________
+                                                
+loginRole                                       loginRole
+id   |login   |roleId     |                     id|login|roleId|
+-----+--------+-----------+                     --+-----+------+
+    1|test    |123        |                      1|test |123   |
+    2|test2   |111|123|256|                      2|test2|256   |
+    3|adm     |           |                      3|test2|123   |
+    4|mRole   |123|256    |                      4|mRole|123   |
+                                                 5|mRole|256   |
+                                                 6|edit |123   |
+                                                 
+roleData                                         roleData
+id|roleId|rolesList        |                     id|roleId|rolesList|
+--+------+-----------------+                     --+------+---------+
+ 2|   256|impl|sqrt        |                      1|   111|sqrt     |
+ 3|   111|sqrt|sqr|impl|adm|                      2|   111|sqr      |
+ 1|   123|sqr|impl         |                      3|   111|impl     |
+                                                  4|   111|adm      |
+                                                  5|   256|impl     |
+                                                  6|   256|sqrt     |
+                                                  7|   123|sqr      |
+                                                  8|   123|impl     |
+
+                                                 roleList
+                                                 id|name|
+                                                 --+----+
+                                                  1|111 |
+                                                  2|123 |
+                                                  3|256 |
+
+
+
+
+
+
+
+ 
+
+
+                                         
